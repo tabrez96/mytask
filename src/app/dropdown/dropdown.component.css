@@ -1,4 +1,6 @@
 .ui-select-choices.dropdown-menu {
     display: block;
-    }
- 
+}
+.form-control{
+    width: 200px;
+}

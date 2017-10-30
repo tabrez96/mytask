@@ -1,5 +1,5 @@
 <div style="width: 300px; margin-bottom: 20px;">
-    <h3>Selecta city</h3>
+    <h3>Select a city</h3>
     <ng-select (mousedown)="setmore()" #SelectId   name="mySelect"
                 [(items)]="items"
                 [disabled]="disabled"
@@ -7,20 +7,18 @@
                 (selected)="selected($event)"
                 (removed)="removed($event)"
                 (typed)="checkdata($event)"
-                placeholder="No city selected"
-                style="display: inline-table;"></ng-select><span>
-                  <button *ngIf="newdata" (click)="addnew()" type="button" class="btn btn-primary" 
-                 >
-           add new
-         </button>
-                </span>
-    <pre>{{itemsToString(value)}}</pre>
-    <div>
-
+                placeholder="{{title}}"
+                style="display: inline-table; width: 200px"></ng-select>
+    <span>
+       <button *ngIf="newdata && addFresh" (click)="addnew()" type="button" class="btn btn-primary">
+        Add new
+       </button>
+    </span>
+    <!-- <div>
       <button type="button" class="btn btn-primary"
               [(ngModel)]="disabledV" btnCheckbox
               btnCheckboxTrue="1" btnCheckboxFalse="0">
         {{disabled === '1' ? 'Enable' : 'Disable'}}
       </button>
-    </div>
+    </div> -->
   </div>
