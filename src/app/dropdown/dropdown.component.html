@@ -1,21 +1,22 @@
 <div style="width: 300px; margin-bottom: 20px;">
-    <h3>Select multiple cities</h3>
-    <ng-select #SelectId   name="mySelect"
-                [multiple]="true"
+    <h3>Selecta city</h3>
+    <ng-select (mousedown)="setmore()" #SelectId   name="mySelect"
                 [(items)]="items"
                 [disabled]="disabled"
                 (data)="refreshValue($event)"
                 (selected)="selected($event)"
                 (removed)="removed($event)"
                 (typed)="checkdata($event)"
-                placeholder="No city selected"></ng-select>
+                placeholder="No city selected"
+                style="display: inline-table;"></ng-select><span>
+                  <button *ngIf="newdata" (click)="addnew()" type="button" class="btn btn-primary" 
+                 >
+           add new
+         </button>
+                </span>
     <pre>{{itemsToString(value)}}</pre>
     <div>
-        <button *ngIf="newdata" (click)="addnew()" type="button" class="btn btn-primary"
-         
-        >
-  add new
-</button>
+
       <button type="button" class="btn btn-primary"
               [(ngModel)]="disabledV" btnCheckbox
               btnCheckboxTrue="1" btnCheckboxFalse="0">
